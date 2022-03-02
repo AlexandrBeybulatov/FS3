@@ -1,14 +1,12 @@
 package tasks;
 
-import tasks.Epic;
-import tasks.Task;
-
 public class SubTask extends Task {
     private Epic epic;
+    private Integer epicId;
 
     public SubTask(String name, String description, Epic epic) {
         super(name, description);
-
+        this.epicId = epic.getId();
         this.epic = epic;
     }
 
@@ -18,6 +16,14 @@ public class SubTask extends Task {
 
     public void setEpic(Epic epic) {
         this.epic = epic;
+    }
+
+    public Integer getEpicId() {
+        return epicId;
+    }
+
+    public void setEpicId(Integer epicId) {
+        this.epicId = epicId;
     }
 
     @Override

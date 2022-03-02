@@ -5,7 +5,6 @@ import tasks.Status;
 import tasks.SubTask;
 import tasks.Task;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -73,7 +72,11 @@ public class InMemoryTaskManager implements TaskManager {
     public void removeByID(int id) {
         tasks.remove(id);
         epics.remove(id);
+        for (int i = 2; i < 5; i++) {
+            historyManager.remove(i);
+        }
         subtasks.remove(id);
+        historyManager.remove(id);
     }
 
     @Override
