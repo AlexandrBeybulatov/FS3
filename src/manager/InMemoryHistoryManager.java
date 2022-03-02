@@ -6,9 +6,9 @@ import java.util.*;
 
 public class InMemoryHistoryManager implements HistoryManager {
 
-    public HashMap<Integer, Node<Task>> historyTask = new HashMap<>();
-    public Node<Task> head;
-    public Node<Task> tail;
+    private HashMap<Integer, Node<Task>> historyTask = new HashMap<>();
+    private Node<Task> head;
+    private Node<Task> tail;
 
     @Override
     public void add(Task task) {
@@ -90,4 +90,27 @@ public class InMemoryHistoryManager implements HistoryManager {
         }
     }
 
+    public HashMap<Integer, Node<Task>> getHistoryTask() {
+        return historyTask;
+    }
+
+    public void setHistoryTask(HashMap<Integer, Node<Task>> historyTask) {
+        this.historyTask = historyTask;
+    }
+
+    public Node<Task> getHead() {
+        return head;
+    }
+
+    public void setHead(Node<Task> head) {
+        this.head = head;
+    }
+
+    public Node<Task> getTail() {
+        return tail;
+    }
+
+    public void setTail(Node<Task> tail) {
+        this.tail = tail;
+    }
 }
